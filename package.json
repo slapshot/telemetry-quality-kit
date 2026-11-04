@@ -1,0 +1,30 @@
+{
+  "name": "@slapshot/telemetry-quality-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zero-runtime-dependency TypeScript primitives for telemetry freshness, gaps, estimated coverage, and streaming statistics",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.12" },
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.tests.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vitest": "5.1.0",
+    "@types/node": "24.0.0"
+  }
+}
